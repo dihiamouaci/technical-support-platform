@@ -1,0 +1,16 @@
+Correction thème clair/sombre
+
+Le fichier theme_apply.php a été ajouté.
+Il lit la valeur app_theme dans la table settings et applique le mode sombre sur les pages PHP.
+
+Pour tester :
+1. Connectez-vous en admin.
+2. Allez dans Paramètres > Général.
+3. Choisissez Sombre.
+4. Cliquez sur Enregistrer.
+5. Rechargez le tableau de bord.
+
+Si vous avez déjà importé l'ancien fichier SQL, ajoutez seulement cette ligne dans phpMyAdmin > SQL :
+
+INSERT INTO settings (`key`, `value`) VALUES ('app_theme', 'light')
+ON DUPLICATE KEY UPDATE value = value;
